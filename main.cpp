@@ -18,12 +18,12 @@ int main(int argc, char const *argv[])
 
 	ifstream frManusc("manuscrito.txt");
 
-	if (!frManusc.is_open())
-	{
-		cout << "Error, file not found." << endl;
+	if(!frManusc.is_open())
+    {
+        cout << "Error, manuscript file not found" << endl;
 
-		return 1;
-	}
+        return 1;
+    }
 
 	char ch;
 
@@ -65,16 +65,12 @@ int main(int argc, char const *argv[])
     	}
     }
 
-    /*valores dados no enunciado -33 
-    Lógica: o caractere mais usado provavelmente é o [space] (32 na tabela). Sendo assim, temos que diminuir 33 do valor
-    65 dado no enunciado e repetir o processo para as outros caracteres.
-	*/
 	int choice = 0;
 	int alteration = 0; //resposta certa = -33
+	bool trocou=false;
 
 	while(choice != 7)
-	{
-		bool trocou=false;
+	{	
 		cout << "What do you want to do?" << endl;
 		cout << "1. Choose value of manipulation (from -50 to 50)" << endl;
 		cout << "2. Show current manuscript" << endl;
